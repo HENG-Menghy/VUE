@@ -8,6 +8,7 @@
         <button @click.stop="toggleFavorite">Favorite</button>
     </div>
 </template>
+
 <script>
     export default {
         props:  ['foodName', 'foodDesc', 'isFavorite'],
@@ -19,6 +20,7 @@
         }
     }
 </script>
+
 <style scoped>
     img {
         float: right;

@@ -12,6 +12,7 @@
     @toggle-favorite="recieveEmit"/>
   </div>
 </template>
+
 <script>
   import FoodItem from './components/FoodItem.vue';
   export default {
@@ -36,6 +37,7 @@
       } 
    }
 </script>
+
 <style scoped>
   #wrapper > div {
     display: inline-block;

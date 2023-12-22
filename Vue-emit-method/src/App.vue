@@ -23,9 +23,9 @@
       return {
         Foods: [
           {name: 'Apple', desc: 'Apples are type of fruit that grow on trees.', fav: true},
-          {name: 'Pizza', desc:'Pizza is a popular Italian dish consisting of a round, flattened base of dough topped with tomato sauce, cheese, and various ingredients such as meats, vegetables, and herbs.', fav: false},
+          {name: 'Pizza', desc:'Pizza is a popular Italian dish consisting of a round, flattened base of dough topped with tomato sauce, cheese, and various ingredients such as meats, vegetables, and herbs.', fav: true},
           {name: 'Rice', desc: 'Rice is eaten for energy. Everybody like to eat.', fav: true},
-          {name: 'Hot soup', desc: 'Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.', fav: false},
+          {name: 'Hot soup', desc: 'Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.', fav: true},
         ]
       }
     },

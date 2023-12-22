@@ -33,6 +33,9 @@
         recieveEmit(myFood) {
           const foundFood = this.Foods.find(food => food.name == myFood);
           foundFood.fav = !foundFood.fav
+        },
+        removeItem() {
+          this.Foods.splice(1,1)
         }
       } 
    }

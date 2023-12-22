@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2>
-            {{ foodName }}
-            <img src="/img_quality.svg" v-show="foodIsFavorite">
+           {{ foodName }}
+           <img src="/img_quality.svg" v-show="foodIsFavorite">
         </h2>
         <p>{{ foodDesc }}</p>
-        <button @click.stop="toggleFavorite">Favorite</button>
+        <button @click="toggleFavorite">Favorite</button>
     </div>
 </template>
 <script>

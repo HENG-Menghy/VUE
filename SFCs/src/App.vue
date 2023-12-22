@@ -1,30 +1,37 @@
 <template>
   <h1>Food</h1>
   <div id="wrapper">
-    <foot-item 
+    <footitem 
     footName="Apple"
     Desc="Apple is a type of fruit that grow on tree."
     v-bind:isFavorite="false"/>
-    <foot-item
+    <footitem
     footName="Pizza"
     Desc="Pizza has a bread base with tomato sauce, cheese, and toppings on top."
     v-bind:isFavorite="false"/>
-    <foot-item
+    <footitem
     footName="Rice"
     Desc="Rice is a type of grain that people like to eat."
     v-bind:isFavorite="false"/>
-    <foot-item
+    <footitem
     footName="Soup"
     Desc="I like to eat soup so much."
     v-bind:isFavorite="true"/>
-    <foot-item
+    <footitem
     footName="Ice Late Coffee"
     Desc="I want to drink it all a single day."
     v-bind:isFavorite="true"/>
   </div>
 </template>
 
-<script> </script>
+<script> 
+  import footitem from './components/FoodItem.vue';
+  export default {
+    components: {
+      footitem,
+    }
+  }
+</script>
 
 <style scoped> 
   #wrapper {

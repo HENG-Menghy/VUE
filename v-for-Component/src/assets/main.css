@@ -1,0 +1,14 @@
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+#wrapper > div {
+    flex-basis: 140px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #90ee90;
+}
+div > p {
+    text-align: justify;
+}
+

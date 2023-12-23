@@ -1,38 +1,43 @@
 <template>
     <div>
         <h2>
-           {{ foodName }}
-           <img src="/img_quality.svg" v-show="foodIsFavorite">
+            {{ foodName }}
+            <img src="/img_quality.svg" v-show="isFavorite">
         </h2>
         <p>{{ foodDesc }}</p>
-        <button @click="toggleFavorite">Favorite</button>
+        <button @click.stop="toggleFavorite">Favorite</button>
     </div>
 </template>
 <script>
     export default {
-        props:  ['foodName', 'foodDesc', 'isFavorite'],
-        data() {
-            return {
-                foodIsFavorite: this.isFavorite
-            }
+        props: {
+            foodName: {
+                type: String,
+                required: true,
+                default: false,
+            },
+            foodDesc: {
+                type: String,
+                required: true,
+                default: 'Apples are type of fruits that grow on trees',
+            },
+            isFavorite: {
+                type: Boolean,
+                required: true,
+                default: false
+            },
         },
+        emits: ['toggle-favorite'],
         methods: {
             toggleFavorite() {
-                this.foodIsFavorite = !this.foodIsFavorite
+                this.$emit('toggle-favorite', this.foodName)
             }
         }
     }
 </script>
 <style scoped>
     img {
-        float: right;
         height: 1.5rem;
-    }
-    button {
-        margin: 20px 0 15px;
-    }
-    p {
-        text-align: justify;
-        margin: 0 10px;
+        float: right;
     }
 </style>

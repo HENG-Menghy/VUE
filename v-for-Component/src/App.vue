@@ -1,49 +1,58 @@
 <template>
-  <h1>Food</h1>
-  <p>Each food item created with v-for is now identified uniquely with the key attribute, and the problem is fixed. The favorite image now stays with the 'Fish' element, and is not transferred to 'Cake'.</p>
+  <h1>Example v-for-Component</h1>
+  <p>Click Favorite button to show and also hidden image.</p>
   <button @click="removeItem">Remove Item</button>
   <div id="wrapper">
     <food-item
-    v-for="item in Foods"
-    :key="item.name"
-    :foodName="item.name"
-    :foodDesc="item.desc"
-    :isFavorite="item.fav"/>
+    v-for="food in Foods"
+    :key="food.name"
+    :foodName="food.name"
+    :foodDesc="food.desc"
+    :isFavorite="food.favorite"
+    @toggle-favorite="recieveEmit"
+    />
   </div>
 </template>
 <script>
-  import FoodItem from './components/FoodItem.vue';
   export default {
-    components: {
-      'food-item': FoodItem
-    },
     data() {
       return {
-        Foods: [
-          {name: 'Apple', desc: 'Apples are type of fruit that grow on trees.', fav: false},
-          {name: 'Pizza', desc:'Pizza is a popular Italian dish consisting of a round, flattened base of dough topped with tomato sauce, cheese, and various ingredients such as meats, vegetables, and herbs.', fav: false},
-          {name: 'Rice', desc: 'Rice is eaten for energy. Everybody like to eat.', fav: true},
-          {name: 'Hot soup', desc: 'Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.', fav: false},
+        Foods: 
+        [
+          {
+            name: 'Apples',
+            favorite: true
+          },
+          {
+            name: 'Rice',
+            desc: 'Rice are type of energy food. People like to eat it.',
+            favorite: false
+          },
+          {
+            name: 'Hot Soup',
+            desc: 'The hot soup is yummy. It is hot and good for eating.',
+            favorite: true,
+            bgColor: '#f2f2f2'
+          },
+          {
+            name: 'Pizza',
+            desc: "Pizza are type of fast food. Most of people like to eat it, but it doesn't for health",
+            favorite: false
+          }
         ]
       }
     },
     methods: {
+      recieveEmit(food) {
+        const foundFood = this.Foods.find(isFood => isFood.name === food);
+        foundFood.favorite = !foundFood.favorite
+      },
       removeItem() {
         this.Foods.splice(1,1)
       }
     }
-   }
+  }
 </script>
 <style scoped>
-  #wrapper > div {
-    display: inline-block;
-    width: 150px;
-    background-color: #90ee90;
-    margin: 20px;
-    padding: 10px;
-  }
-  #wrapper {
-    display: flex;
-    align-items: flex-start;
-  }
+
 </style>
